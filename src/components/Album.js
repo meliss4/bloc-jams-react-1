@@ -63,26 +63,27 @@ class Album extends Component {
              <col id="song-duration-column" />
            </colgroup>  
            <tbody>
-             {this.state.album.songs.map ( (song, index) =>
-            
-               <tr 
-               className="song" 
-               key={index} 
-               onClick={ () => this.handleSongClick(song)}
-               onMouseEnter={ () => this.setState({ isHovered: true}) }
-               onMouseLeave={ () => this.setState({ isHovered: false}) }>
-               <td className="song-actions">
-               <button>
-                 <span className="song-number">{index+1}</span>
-                 <span className="ion-play"></span>
-                 <span className="ion-pause"></span>
-                 </button>
-               </td>
-               <td className="song-title">{song.title}</td>
-               <td className="song-duration">{song.duration}</td>
-             </tr>
-             )}
-           </tbody>
+           {this.state.album.songs.map((song, index) =>
+                  <tr className="song" key={index} onClick={() => this.handleSongClick(song)}
+                    onMouseEnter={() => this.setState({isHovered: index+1})}
+                    onMouseLeave={() => this.setState({isHovered: false})}>
+                    <td className="song-actions">
+                      <button>
+                      { (this.state.currentSong.title === song.title) ?
+                        <span className={this.state.isPlaying ? "ion-pause" : "ion-play"}></span>
+                        :
+                        (this.state.isHovered === index+1) ?
+                        <span className="ion-play"></span>
+                        :
+                        <span className="song-number">{index+1}</span>
+                      }
+                      </button>
+                    </td>
+                    <td className="song-title">{song.title}</td>
+                    <td className="song-duration">{song.duration}</td>
+                  </tr>
+            )}
+          </tbody>
          </table>
        </section>
     );
