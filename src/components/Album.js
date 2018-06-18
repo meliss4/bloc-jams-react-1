@@ -4,7 +4,8 @@ import albumData from './../data/albums';
 class Album extends Component {
   constructor(props) {
     super(props);
-     
+   
+    //retrieve the matching album object and assign it to the album variable 
     const album = albumData.find( album => {
       return album.slug === this.props.match.params.slug
     });
@@ -14,6 +15,7 @@ class Album extends Component {
     };
   }
 
+//whats displayed on the page
   render() {
     return (
       <section className="album">
@@ -32,6 +34,13 @@ class Album extends Component {
              <col id="song-duration-column" />
            </colgroup>  
            <tbody>
+             {this.state.album.songs.map ( (song, index) =>
+             <tr>
+               <td className="song-number">{song.index}{index + 1}</td>
+               <td className="song-title">{song.title}</td>
+               <td className="song-duration">{song.duration}</td>
+             </tr>
+             )}
            </tbody>
          </table>
        </section>
