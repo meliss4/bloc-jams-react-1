@@ -35,7 +35,7 @@ class Album extends Component {
         this.setState({ duration: this.audioElement.duration });
       },
       volumechange: e => {
-        this.setState({ duration: this.audioElement.volume });
+        this.setState({ volume: this.audioElement.volume });
       }
     };
     this.audioElement.addEventListener('timeupdate', this.eventListeners.timeupdate);
@@ -152,7 +152,7 @@ class Album extends Component {
                       </button>
                     </td>
                     <td className="song-title">{song.title}</td>
-                    <td className="song-duration">{song.duration}</td>
+                    <td className="song-duration">{this.formatTime(song.duration)}</td>
                   </tr>
             )}
           </tbody>
