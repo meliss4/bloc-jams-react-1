@@ -2,4 +2,103 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #333333;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+}
+
+/*  APP.JS  */
+.link {
+  color:white;
+  word-spacing: 10px;
+  padding: 0px 5px;
+  word-wrap: normal;
+  display: inline-block;
+}
+
+.link:hover{
+  color: turquoise;
+}
+
+.navigation {
+  text-align: right;
+}
+
+/*  LANDING  */
+.logo-img{
+  padding: 50px 0 0 0;
+  width: 20%;
+  height: 20%;
+}
+
+.hero-title{
+  padding: 0px 0 10px 0;
+  color: lightgoldenrodyellow;
+}
+
+.point-title{
+  color: turquoise;
+  font-weight: bold;
+  padding: 20px 0 0 0;
+}
+
+.point{
+  padding: 0 0 20px 0;
+}
+
+.btn {
+  color: black;
+}
+.btn:hover {
+  background-color: turquoise;
+  color: white;
+}
+
+/*  LIBRARY  */
+.libraryImage {
+  scale:0%;
+}
+
+.libraryText {
+  color:white;
+  word-wrap: normal;
+  display: inline-block;
+}
+
+.libraryText:hover {
+  color: turquoise;
+}
+
+.library {
+  display: flex;
+  flex-direction: row;
+  color: snow;
+  font-size: 1.0em;
+  text-decoration: none;
+}
+
+/*  ALBUM  */
+#song-list {
+  width: 80%;
+  margin: auto;
+  font-size: 1.5rem;
+  text-align: center;
+  align-content: center;
+}
+
+tr:hover {
+  color: turquoise;
+}
+
+.player-bar {
+color:turquoise;
+}
+
+#time-control div, input {
+  display: inline;
+
+}
+
+#volume-control div, input width {
+  display: inline;
 }

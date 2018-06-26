@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import 'bootstrap';
 
 class Album extends Component {
   constructor(props) {
@@ -140,7 +141,7 @@ class Album extends Component {
                     onMouseEnter={() => this.setState({isHovered: index+1})}
                     onMouseLeave={() => this.setState({isHovered: false})}>
                     <td className="song-actions">
-                      <button>
+                      <button className="btn">
                       { (this.state.currentSong.title === song.title) ?
                         <span className={this.state.isPlaying ? "ion-pause" : "ion-play"}></span>
                         :
