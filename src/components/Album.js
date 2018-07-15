@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
-import 'bootstrap';
+import { Table } from 'reactstrap';
 
 class Album extends Component {
   constructor(props) {
@@ -131,9 +131,9 @@ class Album extends Component {
          </section>
          <table id="song-list">
            <colgroup>
-             <col id="song-number-column" />
-             <col id="song-title-column" />
-             <col id="song-duration-column" />
+             <col id="song-number-column col-md-4" />
+             <col id="song-title-column  col-md-4" />
+             <col id="song-duration-column  col-md-4" />
            </colgroup>  
            <tbody>
            {this.state.album.songs.map((song, index) =>
